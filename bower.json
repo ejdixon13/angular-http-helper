@@ -1,6 +1,7 @@
 {
   "name": "angular-http-helper",
   "license": "MIT",
+  "main" : ["./dist/angular-http-helper.min.js"],
   "dependencies": {
     "angular": "~1.4.6"
   }
