@@ -1,0 +1,7 @@
+{
+  "name": "angular-http-helper",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.6"
+  }
+}

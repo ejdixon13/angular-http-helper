@@ -1,0 +1,7 @@
+{
+    "directory": "lib",
+    "registry": "http://bower.ldschurch.org",
+    "scripts" : {
+        "postinstall": "gulp build"
+    }
+}

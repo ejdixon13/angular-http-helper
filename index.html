@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angular-http-helper">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Http Helper</title>
+
+    <!--bower:css-->
+    <!--endbower-->
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+<body>
+
+<div ng-controller="ctrl as vm">
+    Test: {{vm.test}}
+</div>
+
+<!--bower:js-->
+<script src="lib/angular/angular.js"></script>
+<!--endbower-->
+
+<!-- inject:js -->
+<script src="src/angular-http-helper.js"></script>
+<!-- endinject -->
+
+<script type="application/javascript">
+    angular.module('angular-http-helper').controller('ctrl', ['UrlCache', function(UrlCache){
+        var vm = this;
+        vm.test = 'testing';
+    }])
+</script>
+</body>
+</html>
