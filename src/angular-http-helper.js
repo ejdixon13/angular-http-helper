@@ -31,7 +31,7 @@
         function getMethod(url, willCache, cacheSetName) {
             willCache = (willCache) ? willCache : false;
             url = (cacheSetName) ? UrlCache.addUrl(cacheSetName, url) : url;
-            return $http.get(url, {cache: willCache}).then(responseSuccess, responseFailure);
+            return $http.get(url, {cache: willCache});
         }
 
         /********************************************************************
@@ -39,7 +39,7 @@
          ********************************************************************/
         function postMethod(url, data, cacheSetNames) {
             (cacheSetNames) ? UrlCache.deleteUrlCache(cacheSetNames) : '';
-            return $http.post(url, data).then(responseSuccess, responseFailure);
+            return $http.post(url, data);
         }
 
         /********************************************************************
@@ -47,7 +47,7 @@
          ********************************************************************/
         function putMethod(url, data, cacheSetNames) {
             (cacheSetNames) ? UrlCache.deleteUrlCache(cacheSetNames) : '';
-            return $http.put(url, data).then(responseSuccess, responseFailure);
+            return $http.put(url, data);
         }
 
         /********************************************************************
@@ -55,18 +55,7 @@
          ********************************************************************/
         function deleteMethod(url, cacheSetNames) {
             (cacheSetNames) ? UrlCache.deleteUrlCache(cacheSetNames) : '';
-            return $http.delete(url).then(responseSuccess, responseFailure);
-        }
-
-        /********************************************************************
-         * HELPERS
-         ********************************************************************/
-        function responseSuccess(response) {
-            return response.data;
-        }
-
-        function responseFailure(response) {
-            return response;
+            return $http.delete(url);
         }
     }
 

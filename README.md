@@ -29,5 +29,13 @@ angular.module('myApp', ['angular-http-helper', ...])
 
 Example Usage:
 ```
+.controller('MyCtrl' ['HttpHelper', function(HttpHelper) {
+    HttpHelper.get('api/some-endpoint', true, 'some-endpoint-cache') // This will also create a cache with name 'some-endpoint-cache'
+        .then(function(data){
+    //do something with the data returned
+    });
 
+    var data = 'Some arbitrary data';
+    HttpHelper.put('api/some-endpoint', data, 'some-endpoint-cache'); // This will also delete the cache with the name 'some-endpoint-cache'
+}
 ```
