@@ -36,6 +36,7 @@ Example Usage:
     });
 
     var data = 'Some arbitrary data';
-    HttpHelper.put('api/some-endpoint', data, 'some-endpoint-cache'); // This will also delete the cache with the name 'some-endpoint-cache'
+    HttpHelper.put('api/some-endpoint', data, 'some-endpoint-cache'); // This will also delete the cache with the name 'some-endpoint-cache'. You may also pass in an array of caches as well
+
 }
 ```
