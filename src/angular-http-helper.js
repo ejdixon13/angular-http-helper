@@ -20,7 +20,8 @@
             get: getMethod,
             post: postMethod,
             put: putMethod,
-            delete: deleteMethod
+            delete: deleteMethod,
+            jsonp: jsonpMethond
         };
 
         /////////////////////////////////////////////////////////
@@ -56,6 +57,15 @@
         function deleteMethod(url, cacheSetNames) {
             (cacheSetNames) ? UrlCache.deleteUrlCache(cacheSetNames) : '';
             return $http.delete(url);
+        }
+
+        /*****************************************************************************************************
+         * JSONP
+         *****************************************************************************************************/
+         function jsonpMethond(url, willCache, cacheSetName) {
+            willCache = (willCache) ? willCache : false;
+            url = (cacheSetName) ? UrlCache.addUrl(cacheSetName, url) : url;
+            return $http.jsonp(url, {cache: willCache});
         }
     }
 
