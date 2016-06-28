@@ -29,10 +29,9 @@
         /********************************************************************
          * GET
          ********************************************************************/
-        function getMethod(url, willCache, cacheSetName) {
-            willCache = (willCache) ? willCache : false;
-            url = (cacheSetName) ? UrlCache.addUrl(cacheSetName, url) : url;
-            return $http.get(url, {cache: willCache});
+        function getMethod(url, config) {
+            url = (config.cacheName ) ? UrlCache.addUrl(config.cacheName , url) : url;
+            return $http.get(url, angular.extend({cache: Boolean(config.cacheName)}, config));
         }
 
         /********************************************************************
