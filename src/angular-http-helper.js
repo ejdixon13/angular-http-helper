@@ -30,6 +30,7 @@
          * GET
          ********************************************************************/
         function getMethod(url, config) {
+            config = (config) ? config : {};
             url = (config.cacheName ) ? UrlCache.addUrl(config.cacheName , url) : url;
             return $http.get(url, angular.extend({cache: Boolean(config.cacheName)}, config));
         }

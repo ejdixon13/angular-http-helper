@@ -30,7 +30,7 @@ angular.module('myApp', ['angular-http-helper', ...])
 Example Usage:
 ```
 .controller('MyCtrl' ['HttpHelper', function(HttpHelper) {
-    HttpHelper.get('api/some-endpoint', true, 'some-endpoint-cache') // This will also create a cache with name 'some-endpoint-cache'
+    HttpHelper.get('api/some-endpoint', {cacheName: 'some-endpoint-cache'}) // This will also create a cache with name 'some-endpoint-cache'
         .then(function(data){
     //do something with the data returned
     });
